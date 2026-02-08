@@ -23,7 +23,7 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = 'django-insecure-83%w^7vueto8(9!62ymcz(5dji*96y4a5+tv724m@$-@xoy_0l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['uconnect-backend-026s.onrender.com', 'localhost', '127.0.0.1',]
 
@@ -124,6 +124,8 @@ CSRF_COOKIE_AGE = 86400  # 24 hours in seconds
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://sap-black.vercel.app",
+    "https://uconnect-backend-026s.onrender.com",
 ]
 
 # --- CORS SETTINGS ---
@@ -132,10 +134,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:8000",  # Django default port
     "http://127.0.0.1:8000",
+    "https://sap-black.vercel.app",
 ]
 
 # For development, you can be more permissive
-CORS_ALLOW_ALL_ORIGINS = True  # Only for development!
+# CORS_ALLOW_ALL_ORIGINS = True  
 
 # Allow cookies for CORS
 CORS_ALLOW_CREDENTIALS = True
