@@ -24,16 +24,11 @@ def chat_api(request):
 
         
         # Get or create session
-        if session_id:
-            try:
-                session = ChatSession.objects.get(session_id=session_id)
-                print(f"Found existing session: {session.session_id}, Step: {session.step}")
-            except ChatSession.DoesNotExist:
-                session = ChatSession.objects.create()
-                print(f"Created new session: {session.session_id}")
-        else:
-            session = ChatSession.objects.create()
-            print(f"Created new session: {session.session_id}")
+        session = {
+            "session_id": session_id or str(uuid.uuid4()),
+            "step": data.get("step", "greeting"),
+            "temp_data": data.get("temp_data", {}),
+        }
         
         response = process_chat_message(session, message)
         
