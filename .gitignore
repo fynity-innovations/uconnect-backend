@@ -1,0 +1,47 @@
+# ===============================
+# Django
+# ===============================
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+# SQLite database (DO NOT PUSH)
+db.sqlite3
+
+# Media & static
+/media
+/staticfiles
+
+# ===============================
+# Environment variables
+# ===============================
+.env
+.env.*
+*.env
+
+# ===============================
+# Python / Virtual Env
+# ===============================
+.venv/
+venv/
+ENV/
+env/
+
+# ===============================
+# VS Code / IDE
+# ===============================
+.vscode/
+.idea/
+
+# ===============================
+# OS files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Node (frontend safety)
+# ===============================
+node_modules/
